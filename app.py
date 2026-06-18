@@ -519,7 +519,7 @@ with col_intro:
 <div class="info-panel">
   <div class="panel-label">Stack tecnológico</div>
   <div class="panel-body">
-    Desenvolvido em <strong>Python</strong> com <strong>Streamlit</strong> — framework que transforma
+    Desenvolvido em <strong>Python</strong> com <strong>Streamlit</strong>, framework que transforma
     scripts Python em interfaces web interativas sem necessidade de HTML/JS manual.
     O design é controlado inteiramente via <strong>CSS injetado</strong>, definindo tipografia,
     paleta, espaçamento e componentes visuais.
