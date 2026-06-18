@@ -767,9 +767,7 @@ if calcular_btn or "res" in st.session_state:
     h_dev_arr = res["h_dev"]
     h_arr     = res["h"]
 
-    # Tempo para 63,2% e 95%
-    t63 = ARv
-    t95 = 3 * ARv
+    t95 = 3 * ARv  # usado na linha de referência do gráfico
 
     st.markdown('<hr class="divider">', unsafe_allow_html=True)
     st.markdown('<p class="section-eyebrow">// 05 · resultados</p>', unsafe_allow_html=True)
@@ -808,41 +806,6 @@ if calcular_btn or "res" in st.session_state:
   <div class="metric-label">Nível inicial h̄</div>
   <div class="metric-sublabel">Regime permanente</div>
   <div class="metric-value metric-value-gray">{fmt(p["h_bar"], 3)} m</div>
-</div>""", unsafe_allow_html=True)
-
-    st.markdown("<div style='height:0.75rem'></div>", unsafe_allow_html=True)
-
-    # Segunda linha: marcos temporais
-    cm1, cm2, cm3, cm4 = st.columns(4)
-    with cm1:
-        st.markdown(f"""
-<div class="metric-card metric-card-green">
-  <div class="metric-label">t @ 63,2% (1τ)</div>
-  <div class="metric-sublabel">constante de tempo</div>
-  <div class="metric-value metric-value-green">{fmt(t63, 2)} s</div>
-</div>""", unsafe_allow_html=True)
-    with cm2:
-        st.markdown(f"""
-<div class="metric-card metric-card-green">
-  <div class="metric-label">t @ 95% (3τ)</div>
-  <div class="metric-sublabel">praticamente estabilizado</div>
-  <div class="metric-value metric-value-green">{fmt(t95, 2)} s</div>
-</div>""", unsafe_allow_html=True)
-    with cm3:
-        polo = -1 / ARv if ARv > 0 else float('nan')
-        st.markdown(f"""
-<div class="metric-card">
-  <div class="metric-label">Polo s₀</div>
-  <div class="metric-sublabel">−1 / (A·Rᵥ)</div>
-  <div class="metric-value metric-value-gray">{fmt(polo, 4)}</div>
-</div>""", unsafe_allow_html=True)
-    with cm4:
-        ganho = Rv
-        st.markdown(f"""
-<div class="metric-card">
-  <div class="metric-label">Ganho estático K</div>
-  <div class="metric-sublabel">Rᵥ = G(0)</div>
-  <div class="metric-value metric-value-gray">{fmt(ganho, 3)}</div>
 </div>""", unsafe_allow_html=True)
 
     st.markdown("<div style='height:0.75rem'></div>", unsafe_allow_html=True)
