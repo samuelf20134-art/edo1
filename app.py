@@ -903,10 +903,10 @@ if calcular_btn or "res" in st.session_state:
         annotation_font=dict(color="#3FB950", size=10, family=FONT),
     )
     fig.add_vline(
-        x=t95, line_dash="dot", line_color="#3FB95060", line_width=0.8,
+        x=t95, line_dash="dot", line_color="rgba(63,185,80,0.35)", line_width=0.8,
         annotation_text=f"3τ = {fmt(t95, 2)} s",
         annotation_position="top left",
-        annotation_font=dict(color="#3FB95080", size=9, family=FONT),
+        annotation_font=dict(color="rgba(63,185,80,0.5)", size=9, family=FONT),
     )
 
     if curva in ("Nível real h(t)", "Ambas as curvas"):
